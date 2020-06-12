@@ -36,10 +36,21 @@ std::wstring ConvertToWString(const std::string & szStr)
   utf8::unchecked::utf8to16(szStr.begin(), szStr.end(), back_inserter(utf16result));
   return utf16result;
 }
-std::string ConvertToAString(const std::wstring & szStr)
+std::string ConvertToAString(const std::wstring & ws)
 {
+	std::string strLocale = setlocale(LC_ALL, "");
+	const wchar_t* wchSrc = ws.c_str();
+	size_t nDestSize = wcstombs(NULL, wchSrc, 0) + 1;
+	char *chDest = new char[nDestSize];
+	memset(chDest, 0, nDestSize);
+	wcstombs(chDest, wchSrc, nDestSize);
+	std::string strResult = chDest;
+	delete[]chDest;
+	setlocale(LC_ALL, strLocale.c_str());
+	return strResult;
+
   std::string utf8result;
-  utf8::unchecked::utf16to8(szStr.begin(), szStr.end(), back_inserter(utf8result));
+  utf8::unchecked::utf16to8(ws.begin(), ws.end(), back_inserter(utf8result));
   return utf8result;
 }
 

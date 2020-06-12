@@ -41,3 +41,12 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+/.vs/ccbi2ccb/v15/*.suo
+/Backup/*.suo
+/*.suo
+/Debug
+/Release
+/ipch/ccbi2ccb-343be82d/*.ipch
+/ipch/ccbi2ccb-83839a6/*.ipch
+/*.sdf
+/UpgradeLog.htm
