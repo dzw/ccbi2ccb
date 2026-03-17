@@ -504,6 +504,12 @@ bool readNodeRecurse(ccbiReader & ccbi, CCDictionary * pDict)
       pValueArray->push_back(new CCReal(h));
       int tp = ccbi.readIntWithSign(false);
       pValueArray->push_back(new CCInteger(tp));
+      if(w==100 && h==100 && tp==1) {
+        if(strcmpi(baseClass.c_str(), "CCLayer") == 0) {
+          printf("size: %f, %f, %d\n", w, h, tp);  
+        }
+        printf("hit size: %f, %f, %d\n", w, h, tp);  
+      }
       pPropsDict->insert(std::pair<std::string, CCObject *>("value", pValueArray));
     }
     else if (type == kCCBPropTypeScaleLock)
