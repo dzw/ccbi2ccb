@@ -53,6 +53,10 @@ if(MSVC)
     target_compile_options(ccbi2ccb PRIVATE /wd4996)
 endif()
 
+if(MINGW)
+    target_link_options(ccbi2ccb PRIVATE -municode)
+endif()
+
 set_target_properties(ccbi2ccb PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/$<CONFIG>"
 )
