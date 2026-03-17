@@ -6,7 +6,12 @@
             "type": "shell",
             "command": "cmake",
             "args": ["-B", "build", "-A", "Win32"],
-            "options": { "cwd": "${workspaceFolder}" },
+            "options": {
+                "cwd": "${workspaceFolder}",
+                "env": {
+                    "PATH": "D:\\Program Files\\JetBrains\\CLion 2021.2.1\\bin\\cmake\\win\\bin;${env:PATH}"
+                }
+            },
             "group": "build",
             "problemMatcher": []
         },
@@ -15,7 +20,12 @@
             "type": "shell",
             "command": "cmake",
             "args": ["--build", "build", "--config", "Debug"],
-            "options": { "cwd": "${workspaceFolder}" },
+            "options": {
+                "cwd": "${workspaceFolder}",
+                "env": {
+                    "PATH": "D:\\Program Files\\JetBrains\\CLion 2021.2.1\\bin\\cmake\\win\\bin;${env:PATH}"
+                }
+            },
             "group": { "kind": "build", "isDefault": true },
             "dependsOn": "CMake: Configure",
             "problemMatcher": "$msCompile"
@@ -25,7 +35,12 @@
             "type": "shell",
             "command": "cmake",
             "args": ["--build", "build", "--config", "Release"],
-            "options": { "cwd": "${workspaceFolder}" },
+            "options": {
+                "cwd": "${workspaceFolder}",
+                "env": {
+                    "PATH": "D:\\Program Files\\JetBrains\\CLion 2021.2.1\\bin\\cmake\\win\\bin;${env:PATH}"
+                }
+            },
             "group": "build",
             "dependsOn": "CMake: Configure",
             "problemMatcher": "$msCompile"

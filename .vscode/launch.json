@@ -9,7 +9,12 @@
             "args": ["PbHUD.ccbi"],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
-            "environment": [],
+            "environment": [
+                {
+                  "name": "PATH",
+                  "value": "D:\\Program Files\\JetBrains\\CLion 2021.2.1\\bin\\cmake\\win\\bin\\;${env:PATH}"
+                }
+              ],
             "preLaunchTask": "CMake: Build Debug"
         },
         {
@@ -20,7 +25,12 @@
             "args": ["PbHUD.ccbi"],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
-            "environment": [],
+            "environment": [
+                {
+                  "name": "PATH",
+                  "value": "D:\\Program Files\\JetBrains\\CLion 2021.2.1\\bin\\cmake\\win\\bin\\;${env:PATH}"
+                }
+              ],
             "preLaunchTask": "CMake: Build Release"
         }
     ]
