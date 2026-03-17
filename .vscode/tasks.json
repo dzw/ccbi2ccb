@@ -1,0 +1,133 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "CMake: Configure Debug",
+            "type": "shell",
+            "command": "D:\\msys64\\ucrt64\\bin\\cmake.exe",
+            "args": [
+                "-S",
+                ".",
+                "-B",
+                "build/debug",
+                "-G",
+                "Ninja",
+                "-D",
+                "CMAKE_BUILD_TYPE=Debug",
+                "-D",
+                "CMAKE_CXX_COMPILER=D:/msys64/ucrt64/bin/g++.exe"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}",
+                "env": {
+                    "PATH": "D:\\msys64\\ucrt64\\bin;${env:PATH}",
+                    "MSYSTEM": "UCRT64"
+                }
+            },
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "label": "CMake: Build Debug",
+            "type": "shell",
+            "command": "D:\\msys64\\ucrt64\\bin\\cmake.exe",
+            "args": ["--build", "build/debug"],
+            "options": {
+                "cwd": "${workspaceFolder}",
+                "env": {
+                    "PATH": "D:\\msys64\\ucrt64\\bin;${env:PATH}",
+                    "MSYSTEM": "UCRT64"
+                }
+            },
+            "group": { "kind": "build", "isDefault": true },
+            "dependsOn": "CMake: Configure Debug",
+            "problemMatcher": []
+        },
+        {
+            "label": "CMake: Configure Release",
+            "type": "shell",
+            "command": "D:\\msys64\\ucrt64\\bin\\cmake.exe",
+            "args": [
+                "-S",
+                ".",
+                "-B",
+                "build/release",
+                "-G",
+                "Ninja",
+                "-D",
+                "CMAKE_BUILD_TYPE=Release",
+                "-D",
+                "CMAKE_CXX_COMPILER=D:/msys64/ucrt64/bin/g++.exe"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}",
+                "env": {
+                    "PATH": "D:\\msys64\\ucrt64\\bin;${env:PATH}",
+                    "MSYSTEM": "UCRT64"
+                }
+            },
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "label": "CMake: Build Release",
+            "type": "shell",
+            "command": "D:\\msys64\\ucrt64\\bin\\cmake.exe",
+            "args": ["--build", "build/release"],
+            "options": {
+                "cwd": "${workspaceFolder}",
+                "env": {
+                    "PATH": "D:\\msys64\\ucrt64\\bin;${env:PATH}",
+                    "MSYSTEM": "UCRT64"
+                }
+            },
+            "group": "build",
+            "dependsOn": "CMake: Configure Release",
+            "problemMatcher": []
+        },
+        {
+            "label": "CMake: Configure (MSVC)",
+            "type": "shell",
+            "command": "cmake",
+            "args": ["-B", "build/msvc", "-A", "Win32"],
+            "options": {
+                "cwd": "${workspaceFolder}",
+                "env": {
+                    "PATH": "D:\\Program Files\\JetBrains\\CLion 2021.2.1\\bin\\cmake\\win\\bin;${env:PATH}"
+                }
+            },
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "label": "CMake: Build Debug (MSVC)",
+            "type": "shell",
+            "command": "cmake",
+            "args": ["--build", "build/msvc", "--config", "Debug"],
+            "options": {
+                "cwd": "${workspaceFolder}",
+                "env": {
+                    "PATH": "D:\\Program Files\\JetBrains\\CLion 2021.2.1\\bin\\cmake\\win\\bin;${env:PATH}"
+                }
+            },
+            "group": "build",
+            "dependsOn": "CMake: Configure (MSVC)",
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "CMake: Build Release (MSVC)",
+            "type": "shell",
+            "command": "cmake",
+            "args": ["--build", "build/msvc", "--config", "Release"],
+            "options": {
+                "cwd": "${workspaceFolder}",
+                "env": {
+                    "PATH": "D:\\Program Files\\JetBrains\\CLion 2021.2.1\\bin\\cmake\\win\\bin;${env:PATH}"
+                }
+            },
+            "group": "build",
+            "dependsOn": "CMake: Configure (MSVC)",
+            "problemMatcher": "$msCompile"
+        }
+    ]
+}

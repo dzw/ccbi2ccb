@@ -1,0 +1,81 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug ccbi2ccb (MSYS2)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/debug/Debug/ccbi2ccb.exe",
+            "args": ["PbHUD.ccbi"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "MIMode": "gdb",
+            "miDebuggerPath": "D:\\msys64\\ucrt64\\bin\\gdb.exe",
+            "environment": [
+                {
+                  "name": "PATH",
+                  "value": "D:\\msys64\\ucrt64\\bin;${env:PATH}"
+                },
+                {
+                  "name": "MSYSTEM",
+                  "value": "UCRT64"
+                }
+              ],
+            "preLaunchTask": "CMake: Build Debug"
+        },
+        {
+            "name": "Release ccbi2ccb (MSYS2)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/release/Release/ccbi2ccb.exe",
+            "args": ["PbHUD.ccbi"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "MIMode": "gdb",
+            "miDebuggerPath": "D:\\msys64\\ucrt64\\bin\\gdb.exe",
+            "environment": [
+                {
+                  "name": "PATH",
+                  "value": "D:\\msys64\\ucrt64\\bin;${env:PATH}"
+                },
+                {
+                  "name": "MSYSTEM",
+                  "value": "UCRT64"
+                }
+              ],
+            "preLaunchTask": "CMake: Build Release"
+        },
+        {
+            "name": "Debug ccbi2ccb (cppvsdbg)",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/msvc/Debug/ccbi2ccb.exe",
+            "args": ["PbHUD.ccbi"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [
+                {
+                  "name": "PATH",
+                  "value": "D:\\Program Files\\JetBrains\\CLion 2021.2.1\\bin\\cmake\\win\\bin;${env:PATH}"
+                }
+              ],
+            "preLaunchTask": "CMake: Build Debug (MSVC)"
+        },
+        {
+            "name": "Release ccbi2ccb (cppvsdbg)",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/msvc/Release/ccbi2ccb.exe",
+            "args": ["PbHUD.ccbi"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [
+                {
+                  "name": "PATH",
+                  "value": "D:\\Program Files\\JetBrains\\CLion 2021.2.1\\bin\\cmake\\win\\bin;${env:PATH}"
+                }
+              ],
+            "preLaunchTask": "CMake: Build Release (MSVC)"
+        }
+    ]
+}
