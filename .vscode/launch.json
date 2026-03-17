@@ -1,0 +1,27 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug ccbi2ccb",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/Debug/ccbi2ccb.exe",
+            "args": ["PbHUD.ccbi"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "preLaunchTask": "CMake: Build Debug"
+        },
+        {
+            "name": "Release ccbi2ccb",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/Release/ccbi2ccb.exe",
+            "args": ["PbHUD.ccbi"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "preLaunchTask": "CMake: Build Release"
+        }
+    ]
+}
